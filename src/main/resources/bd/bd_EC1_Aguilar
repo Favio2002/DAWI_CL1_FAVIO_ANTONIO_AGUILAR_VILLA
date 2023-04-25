@@ -1,0 +1,37 @@
+create database EC1_Aguilar;
+drop database EC1_Aguilar;
+use EC1_Aguilar;
+
+create table tb_areas(
+id_area int not null primary key,
+nom_area varchar(50),
+cant_clien_area	int 
+);
+
+ CREATE TABLE tb_cliente(
+id_cliente INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+nom_cliente varchar(50),
+apell_cliente varchar(50),
+direccion varchar(100),
+edad int,
+id_area int,
+constraint fk_areas foreign key (id_area) references tb_areas(id_area)
+);
+
+insert into tb_cliente values (1,'Favio', 'Aguilar','Florencia de mora - 26 de julio #853', 21, 1);
+insert into tb_cliente values (2,'Mauricio', 'Villa','Milagro- 26 de Marzo #853', 18, 3);
+insert into tb_cliente values (3,'Xaby', 'Aguilar','Moche de mora - 26 de Enero #853', 20, 2);
+
+select * from tb_cliente;
+
+
+
+insert into tb_areas values (1,'Adminatriva', 4);
+insert into tb_areas values (2,'Recursos Humanos', 3);
+insert into tb_areas values (3,'Contabilidad', 6);
+select * from tb_areas;
+
+
+
+
+
